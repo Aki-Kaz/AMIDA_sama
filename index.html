@@ -189,7 +189,7 @@ h2.res { margin-bottom: 14px; font-family: var(--font-display); font-weight: 400
   </div>
 
   <div class="actions">
-    <button type="button" class="draw" id="draw">選ぶ</button>
+    <button type="button" class="draw" id="draw">あみださまに聞く</button>
     <button type="button" class="sub" id="skip" hidden>演出をとばす</button>
     <span class="status" id="status" role="status"></span>
   </div>
@@ -199,7 +199,7 @@ h2.res { margin-bottom: 14px; font-family: var(--font-display); font-weight: 400
   </section>
 
   <section id="results" hidden aria-labelledby="h-results">
-    <h2 class="res" id="h-results">けっか</h2>
+    <h2 class="res" id="h-results">あみださまのお告げ</h2>
     <div class="cards" id="cards" aria-live="polite"></div>
     <div class="actions" style="margin-top:18px">
       <button type="button" class="sub" id="copy">結果をコピー</button>
@@ -504,7 +504,7 @@ h2.res { margin-bottom: 14px; font-family: var(--font-display); font-weight: 400
       $("restTitle").textContent = (overlap ? "どの枠にも選ばれなかった人(" : "選ばれなかった人(") + rest.length + "人)";
       $("restList").textContent = rest.length ? rest.join("、") : "なし";
       $("results").hidden = false;
-      drawBtn.textContent = "もう一度選ぶ";
+      drawBtn.textContent = "もう一度聞く";
       refresh();
       $("results").scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth", block: "nearest" });
     };
@@ -512,7 +512,7 @@ h2.res { margin-bottom: 14px; font-family: var(--font-display); font-weight: 400
     if (reduce.matches) { $("stagePanel").hidden = true; done(); return; }
 
     skipBtn.hidden = false;
-    $("status").textContent = "あみだくじを引いています…";
+    $("status").textContent = "あみださまが考えています…";
     if (people.length >= 2 && people.length <= 30) {
       $("stagePanel").hidden = false;
       $("stagePanel").scrollIntoView({ behavior: "smooth", block: "nearest" });
